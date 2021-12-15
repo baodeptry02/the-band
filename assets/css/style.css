@@ -13,6 +13,7 @@
   left: 0;
   right: 0;
   position: fixed; /* sử dụng position fixed sẽ làm cho header nổi lên cao hơn nên bây giờ slider đứng ở vị trị cũ của header, nên khắc phục tình trạng này chúng ta sẽ dụng margin bằng với chiều cao của header ban đầu là 46px */
+  overflow: hidden; /* thằng nào vượt quá thằng cha, nhảy ra ngoài vượt quá chiều cao hoặc chiều ngang sẽ bị ẩn hết */
 }
 #nav {
   display: inline-flex;
@@ -76,6 +77,23 @@
   background-color: #f44336 !important;
   cursor: pointer;
 }
+.mobile-menu-btn {
+  top: 0;
+  right: 0;
+  position: absolute;
+  color: #fff;
+  font-size: 15px;
+  line-height: 46px;
+  padding: 0px 30px;
+  width: 0;
+  font-weight: bold;
+  text-align: justify;
+}
+.mobile-menu-btn:hover {
+  color: #000 !important;
+  background-color: #ccc !important;
+  max-width: 100%;
+}
 .text-heading {
   font-size: 24px;
   font-weight: 400;
@@ -89,8 +107,7 @@
   margin-bottom: 48px;
 }
 .slider {
-/*   margin-top: 46px; */
-  height: 100vh;
+  margin-top: 46px;
   background-color: rgba(0, 0, 0, 0.863);
   display: flex;
   justify-content: center;
@@ -309,7 +326,7 @@
   font-size: 14px;
 }
 .modal-label {
-  cursor: default;  /* trỏ chuột mặc đinh */
+  cursor: default; /* trỏ chuột mặc đinh */
   display: block;
   padding: 15px 0;
 }
@@ -355,7 +372,7 @@
   font-size: 18px;
   width: 100%;
   line-height: 1.5;
-  display:inline-flex;
+  display: inline-flex;
   justify-content: space-between;
 }
 .contact-info {
@@ -393,21 +410,24 @@
   cursor: pointer;
 }
 .map {
-  width: 100%
+  width: 100%;
 }
 .footer {
   padding: 64px 16px;
- text-align: center;
- font-size: 24px;
- background: #f1f1f1;
+  text-align: center;
+  font-size: 24px;
+  background: #f1f1f1;
 
- opacity: 0.6;
+  opacity: 0.6;
 }
-.hover-icon:hover { 
+.hover-icon:hover {
   opacity: 0.6;
 }
 /* ở đây di chuyển trỏ chuột tới vị trí đầu của chữ rồi ấn giữ alt + shift,, dùng chuột bấm lên các hàng trên, sau đó bấm dấu chấm, để selector vào class, rồi sau đó bấm shift alt + mũi tên phải để chuyển tới vị trí cuối cùng, rồi bấm {}, thế là xong */
 
+.open-nav {
+  height: auto; /* sử dụng dev tool để xem, console.log(variable.clientHeight) */
+}
 @keyframes modalFadeIn {
   from {
     opacity: 0;
@@ -417,5 +437,28 @@
     opacity: 1;
     transform: translateY(0);
   }
-} 
-/* cái này là nhiều ảnh tĩnh kết hợp animation sẽ thành ảnh động
+}
+/* cái này là nhiều ảnh tĩnh kết hợp animation sẽ thành ảnh động */
+@media (max-width: 800px) {
+  /*  nhỏ hơn hoặc bằng 800px thì css sẽ chạy */
+}
+@media (min-width: 800px) {
+  /* lớn hơn hoặc bằng 800px thì css mới chạy */
+}
+
+/* PC: >= 1024px
+Tablet: >= 740px & < 1024px
+Mobile: < 740px */
+
+/* responsive mobile */
+@media (max-width: 740px) {
+  #nav {
+    display: block;
+  }
+  .search-icon,
+  .text-heading,
+  .text-description,
+  .nav-more {
+    display: none;
+  }
+}

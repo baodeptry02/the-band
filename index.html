@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The band</title>
+    <link rel="icon" href="./assets/image/favicon/download.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
 </head>
 <body>
         <div class="main">
@@ -19,7 +20,7 @@
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li>
+                    <li class="nav-more">
                         <a href="#">More<i class="fa fa-caret-down"></i></a>
                         <ul class="subnav">
                             <li><a href="">Merchandise</a></li>
@@ -32,6 +33,9 @@
                     <div class="search-icon">
                         <i class="fa fa-search"></i>
                     </div>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
             <div class="slider">
@@ -122,7 +126,7 @@
                         </ul>
                         <div class="places-list">
                             <div class="place-item">
-                                <img src="../w3_band/assets/image/place/new york.jpg" alt="New York
+                                <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York
                                 " class="place-img">
                                 <div class="place-content">
                                     <div class="heading">New York</div>
@@ -136,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="place-item">
-                                <img src="../w3_band/assets/image/place/paris.jpg" alt="Paris
+                                <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris
                                 " class="place-img">
                                 <div class="place-content">
                                     <div class="heading">Paris</div>
@@ -149,7 +153,7 @@
                                 </div>
                             </div>
                             <div class="place-item">
-                                <img src="../w3_band/assets/image/place/sanfran.jpg" alt="San Francisco
+                                <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="San Francisco
                                 " class="place-img">
                                 <div class="place-content">
                                     <div class="heading">San Francisco
@@ -236,6 +240,34 @@
                <i class="fab fa-twitter hover-icon"></i>
                <i class="fab fa-linkedin-in hover-icon"></i>
            </div>
+
+           <script>
+               /* open and close nav when clicking on bars*/
+              const openMenu = document.querySelector('.mobile-menu-btn');
+              const header = document.querySelector('.header');
+              const menuItems = document.querySelectorAll('a[href *="#"]');
+              console.log(menuItems)
+
+              openMenu.onclick = () => {
+                  if (header.clientHeight === 46) /* chiều cao bằng 46px thì mở nav */ {
+
+                      header.classList.add('open-nav')
+                    }
+                    else {
+                        header.classList.remove('open-nav')
+
+                    }
+              }
+
+                /* open and close nav when clicking on navigation bar */
+
+           for ( let i = 0; i < menuItems.length; ++i) {
+               menuItems[i].onclick = () => {
+                    
+               } 
+           }
+
+           </script>
         <script>
 
             /* open and close modal */
