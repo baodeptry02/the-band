@@ -480,6 +480,9 @@ Mobile: < 740px */
   .header {
     overflow: hidden;
   }
+  .slider {
+    height: 100%;
+  }
   .member-lists {
     display: block;
     margin-right: auto;
