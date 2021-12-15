@@ -187,8 +187,8 @@
                         <div class="contact-form">
                             <form action="" target="_blank">
                                 <div class="two-input">
-                                    <input style="margin-right: 8px;" type="text" name="" placeholder="Name" id="" class="form-control">
-                                    <input style="margin-left: 8px;" type="text" name="" placeholder="Email" id="" class="form-control">
+                                    <input  type="text" name="" placeholder="Name" id="" class="form-control control-distance-input">
+                                    <input  type="text" name="" placeholder="Email" id="" class="form-control">
                                 </div>
                                 <div class="one-input">
                                     <input type="text" name="" placeholder="Message" id="" class="form-control">
@@ -255,17 +255,16 @@
                     }
                     else {
                         header.classList.remove('open-nav')
-
                     }
               }
 
                 /* open and close nav when clicking on navigation bar */
 
            for ( let i = 0; i < menuItems.length; ++i) {
-               menuItems[i].onclick = () => {
-                    
+                 menuItems[i].onclick = () => {
+                    header.classList.remove('open-nav')
+                 }
                } 
-           }
 
            </script>
         <script>
