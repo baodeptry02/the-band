@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   position: fixed; /* sử dụng position fixed sẽ làm cho header nổi lên cao hơn nên bây giờ slider đứng ở vị trị cũ của header, nên khắc phục tình trạng này chúng ta sẽ dụng margin bằng với chiều cao của header ban đầu là 46px */
-  overflow: hidden; /* thằng nào vượt quá thằng cha, nhảy ra ngoài vượt quá chiều cao hoặc chiều ngang sẽ bị ẩn hết */
+  /*   overflow: hidden;  */ /* thằng nào vượt quá thằng cha, nhảy ra ngoài vượt quá chiều cao hoặc chiều ngang sẽ bị ẩn hết */
 }
 #nav {
   display: inline-flex;
@@ -88,6 +88,7 @@
   width: 0;
   font-weight: bold;
   text-align: justify;
+  display: none;
 }
 .mobile-menu-btn:hover {
   color: #000 !important;
@@ -388,6 +389,9 @@
 .one-input {
   margin-top: 8px;
 }
+.control-distance-input {
+  margin-right: 16px;
+}
 .form-control {
   border: 1px solid #ccc;
   padding: 11px 10px;
@@ -455,16 +459,45 @@ Mobile: < 740px */
   #nav {
     display: block;
   }
+  #nav li a {
+    display: block;
+  }
+  #nav > li:first-child {
+    display: inline-block;
+  }
   .search-icon,
   .text-heading,
   .text-description,
   .nav-more {
     display: none;
   }
-}
-
-@media (min-width: 1024px) {
   .mobile-menu-btn {
-    display: none;
+    display: block;
+  }
+  .header {
+    overflow: hidden;
+  }
+  .member-lists {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .member-lists .member-item {
+    width: 100%;
+  }
+  .places-list {
+    display: block;
+  }
+  .contact-content {
+    display: block;
+  }
+  .contact-form {
+    width: 100%;
+  }
+  .two-input {
+    display: block;
+  }
+  .control-distance-input {
+    margin-bottom: 8px;
   }
 }
